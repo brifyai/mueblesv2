@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto · FORJA</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{background:#fff}
+  .overlay-header{position:sticky;color:#333;border-bottom:1px solid var(--line);background:#fff}
+  .overlay-header .menu-btn span{background:#333}.overlay-header .logo-mark{color:#333;text-shadow:none}
+  .overlay-header .hicon{color:#333}.overlay-header .cart-count{background:#333;color:#fff}
+  .contact{max-width:1100px;margin:0 auto;padding:4rem 2rem 6rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+  .contact h1{font-weight:400;font-size:2rem;letter-spacing:.05em;margin-bottom:1.4rem}
+  .contact .lead{color:#666;line-height:1.8;margin-bottom:2.4rem}
+  .cinfo p{margin-bottom:1.4rem;font-size:.92rem;line-height:1.7}
+  .cinfo .lbl{text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;color:#999;display:block;margin-bottom:.2rem}
+  .cinfo a{border-bottom:1px solid transparent}.cinfo a:hover{border-color:#333}
+  .field{margin-bottom:1.1rem}
+  .field label{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:.4rem}
+  .field input,.field textarea{width:100%;padding:.8rem .9rem;border:1px solid var(--line);font-family:inherit;font-size:.95rem}
+  .field textarea{min-height:130px;resize:vertical}
+  .field input:focus,.field textarea:focus{outline:none;border-color:#333}
+  .send{background:#333;color:#fff;padding:1rem 2.4rem;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;transition:.25s}
+  .send:hover{background:#000}
+  .ok{color:#2a7;font-size:.85rem;margin-top:1rem;display:none}
+  @media(max-width:760px){.contact{grid-template-columns:1fr;gap:2.5rem}}
+</style>
+</head>
+<body>
+  <header class="overlay-header">
+    <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Forja · Diseño · Madera · Acero"></span></a>
+    <div class="header-actions">
+      <button class="hicon cart-btn" id="cartBtn"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 7h12l-1 13H7L6 7z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 7a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <section class="contact">
+    <div class="cinfo">
+      <h1>Contacto</h1>
+      <p class="lead">¿Buscas una pieza especial o un proyecto a medida? Escríbenos y te acompañamos en cada detalle.</p>
+      <p><span class="lbl">Email</span><a href="mailto:hi@forjalab.cl">hi@forjalab.cl</a></p>
+      <p><span class="lbl">WhatsApp</span><a href="https://api.whatsapp.com/send/?phone=56986753883" target="_blank" rel="noopener">+56 9 8675 3883</a></p>
+      <p><span class="lbl">Showroom</span>Gerónimo de Alderete 1450, local 5, Vitacura. Santiago, Chile.</p>
+      <p><span class="lbl">Instagram</span><a href="https://www.instagram.com/forjalab.cl/" target="_blank" rel="noopener">@forjalab.cl</a></p>
+    </div>
+    <form id="cform">
+      <div class="field"><label>Nombre</label><input required name="nombre"></div>
+      <div class="field"><label>Email</label><input required type="email" name="email"></div>
+      <div class="field"><label>Teléfono</label><input name="tel"></div>
+      <div class="field"><label>Mensaje</label><textarea required name="msg"></textarea></div>
+      <button class="send" type="submit">Enviar mensaje</button>
+      <p class="ok" id="ok">¡Gracias! Te responderemos a la brevedad.</p>
+    </form>
+  </section>
+
+  <div class="menu-panel" id="menuPanel">
+    <button class="menu-close" id="menuClose">×</button>
+    <nav class="menu-nav"><a href="index.html">Inicio</a><a href="tienda.html">Muebles</a>
+<div class="submenu"><a href="tienda.html?cat=centro">Mesa de Centro</a>
+<a href="tienda.html?cat=auxiliar">Mesa Auxiliar</a>
+<a href="tienda.html?cat=comedor">Mesa Comedor</a></div>
+<a href="tienda.html?cat=sillas">Sillas</a>
+<div class="submenu">
+<a href="tienda.html?cat=silla-comedor">Silla Comedor</a>
+<a href="tienda.html?cat=sitial">Sitial</a>
+<a href="tienda.html?cat=banqueta">Banqueta</a>
+<a href="tienda.html?cat=banca">Banca</a>
+</div><a href="tienda.html?cat=complementos">Complementos</a>
+<div class="submenu">
+<a href="tienda.html?cat=cojines">Cojines</a>
+<a href="tienda.html?cat=maceteros">Maceteros</a>
+<a href="tienda.html?cat=lamparas">Lámparas</a>
+</div>
+<a href="contacto.html">Contacto</a><a href="faq.html">FAQ</a></nav>
+  </div>
+  <div class="overlay-backdrop" id="backdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head"><h2>Carrito</h2><button class="menu-close" id="cartClose">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><div class="cart-total"><span>Total</span><span id="cartTotal">$0</span></div><a href="checkout.html" class="btn-checkout">Ir a pagar</a></div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('cform').addEventListener('submit',e=>{e.preventDefault();e.target.reset();document.getElementById('ok').style.display='block'});
+  </script>
+</body>
+</html>

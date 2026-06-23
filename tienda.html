@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tienda · FORJA · Diseño · Madera · Acero</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{background:#fff}
+  .overlay-header{position:sticky;color:#333;border-bottom:1px solid var(--line);background:#fff}
+  .overlay-header .menu-btn span{background:#333}
+  .overlay-header .logo-mark{color:#333;text-shadow:none}
+  .overlay-header .hicon{color:#333}
+  .overlay-header .cart-count{background:#333;color:#fff}
+  .shop{max-width:1300px;margin:0 auto;padding:3rem 2rem 6rem}
+  .shop-head{text-align:center;margin-bottom:2.5rem}
+  .shop-head h1{font-weight:400;font-size:2rem;letter-spacing:.05em}
+  .filters{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin:1.6rem 0 3rem}
+  .filters button{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#888;padding-bottom:.3rem;border-bottom:1px solid transparent}
+  .filters button.active{color:#333;border-color:#333}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8rem 1.6rem;align-items:start}
+  .card{text-align:center;display:flex;flex-direction:column}
+  .card .ph{display:block;aspect-ratio:3/4;overflow:hidden;background:#f6f4f0;margin-bottom:.9rem}
+  .card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .card:hover img{transform:scale(1.05)}
+  .card h3{font-weight:400;font-size:.95rem;line-height:1.35;min-height:2.6em;display:flex;align-items:center;justify-content:center;margin:0 auto;max-width:90%}
+  .card h3 a:hover{opacity:.6}
+  .card .price{color:#777;font-size:.85rem;margin:.35rem 0 .8rem}
+  .card .add{margin-top:auto}
+  .card .add{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid #333;padding:.6rem 1.4rem;transition:.25s}
+  .card .add:hover{background:#333;color:#fff}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <header class="overlay-header">
+    <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Forja · Diseño · Madera · Acero"></span></a>
+    <div class="header-actions">
+      <button class="hicon cart-btn" id="cartBtn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 7h12l-1 13H7L6 7z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 7a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="shop">
+    <div class="shop-head"><h1>Muebles</h1></div>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- menú y carrito reutilizados -->
+  <div class="menu-panel" id="menuPanel">
+    <button class="menu-close" id="menuClose">×</button>
+    <nav class="menu-nav"><a href="index.html">Inicio</a><a href="tienda.html">Muebles</a>
+<div class="submenu"><a href="tienda.html?cat=centro">Mesa de Centro</a>
+<a href="tienda.html?cat=auxiliar">Mesa Auxiliar</a>
+<a href="tienda.html?cat=comedor">Mesa Comedor</a></div>
+<a href="tienda.html?cat=sillas">Sillas</a>
+<div class="submenu">
+<a href="tienda.html?cat=silla-comedor">Silla Comedor</a>
+<a href="tienda.html?cat=sitial">Sitial</a>
+<a href="tienda.html?cat=banqueta">Banqueta</a>
+<a href="tienda.html?cat=banca">Banca</a>
+</div><a href="tienda.html?cat=complementos">Complementos</a>
+<div class="submenu">
+<a href="tienda.html?cat=cojines">Cojines</a>
+<a href="tienda.html?cat=maceteros">Maceteros</a>
+<a href="tienda.html?cat=lamparas">Lámparas</a>
+</div>
+<a href="contacto.html">Contacto</a><a href="faq.html">FAQ</a></nav>
+  </div>
+  <div class="overlay-backdrop" id="backdrop"></div>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head"><h2>Carrito</h2><button class="menu-close" id="cartClose">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><span id="cartTotal">$0</span></div>
+      <a href="checkout.html" class="btn-checkout">Ir a pagar</a>
+    </div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const sections={
+      muebles: {title:'Muebles', filters:[['','Todos'],['centro','Mesa de Centro'],['auxiliar','Mesa Auxiliar'],['comedor','Mesa Comedor']]},
+      sillas:  {title:'Sillas',  filters:[['','Todos'],['silla-comedor','Silla Comedor'],['sitial','Sitial'],['banqueta','Banqueta'],['banca','Banca']]},
+      complementos: {title:'Complementos', filters:[['','Todos'],['cojines','Cojines'],['maceteros','Maceteros'],['lamparas','Lámparas']]}
+    };
+    const params=new URLSearchParams(location.search);
+    let active=params.get('cat')||'';
+    // detect which section
+    const sec=sections[active]||Object.values(sections).find(s=>s.filters.some(f=>f[0]===active))||sections.muebles;
+    if(sections[active]) active=''; // clicked parent category, show all
+    const cats=sec.filters;
+    const fEl=document.getElementById('filters'),gEl=document.getElementById('grid');
+    const titleEl=document.querySelector('.shop-head h1');
+    titleEl.textContent=sec.title;
+    cats.forEach(([v,l])=>{const b=document.createElement('button');b.textContent=l;if(v===active)b.classList.add('active');b.onclick=()=>{active=v;render();[...fEl.children].forEach(c=>c.classList.toggle('active',c===b))};fEl.appendChild(b)});
+    function render(){
+      const label=(cats.find(c=>c[0]===active)||['',''])[1];
+      if(active) titleEl.textContent=label; else titleEl.textContent=sec.title;
+      const validCats=sec.filters.map(f=>f[0]).filter(Boolean);
+      const list=PRODUCTS.filter(p=> !active ? validCats.includes(p.cat) : p.cat===active);
+      gEl.innerHTML=list.map(p=>`<div class="card">
+        <a class="ph" href="producto.html?id=${p.id}"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80'"></a>
+        <h3><a href="producto.html?id=${p.id}">${p.name}</a></h3><p class="price">${fmt(p.price)}</p>
+        <button class="add" data-id="${p.id}">Agregar</button></div>`).join('');
+      gEl.querySelectorAll('.add').forEach(b=>b.onclick=()=>{const p=PRODUCTS.find(x=>x.id===b.dataset.id);LukCart.addToCart(p)});
+    }
+    render();
+  </script>
+</body>
+</html>

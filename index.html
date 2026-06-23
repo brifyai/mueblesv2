@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORJA | Diseño de lujo contemporáneo desde Chile.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=21">
+</head>
+<body class="home">
+
+  <!-- Overlay header -->
+  <header class="overlay-header">
+    <button class="menu-btn" id="menuBtn" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#" class="logo" aria-label="Forja inicio">
+      <span class="logo-mark"><img src="logo.png?v=2" alt="Forja · Diseño · Madera · Acero"></span>
+    </a>
+    <div class="header-actions">
+      <button class="hicon" id="searchBtn" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <a href="#" class="hicon" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.5 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+      <a href="mi-cuenta.html" class="hicon" aria-label="Cuenta">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+      <button class="hicon cart-btn" id="cartBtn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 7h12l-1 13H7L6 7z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 7a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fullscreen slideshow -->
+  <main class="slideshow" id="slideshow">
+    <div class="slide is-active" style="background-image:url('https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=2400&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2400&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=2400&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=2400&q=80')"></div>
+
+    <div class="slide-dots" id="slideDots"></div>
+  </main>
+
+  <!-- Slide-out menu (popup) -->
+  <div class="menu-panel" id="menuPanel" aria-hidden="true">
+    <button class="menu-close" id="menuClose" aria-label="Cerrar">×</button>
+    <nav class="menu-nav">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Muebles</a>
+      <div class="submenu">
+        <a href="tienda.html?cat=centro">Mesa de Centro</a>
+        <a href="tienda.html?cat=auxiliar">Mesa Auxiliar</a>
+        <a href="tienda.html?cat=comedor">Mesa Comedor</a>
+      </div>
+      <a href="tienda.html?cat=sillas">Sillas</a>
+      <div class="submenu">
+        <a href="tienda.html?cat=silla-comedor">Silla Comedor</a>
+        <a href="tienda.html?cat=sitial">Sitial</a>
+        <a href="tienda.html?cat=banqueta">Banqueta</a>
+        <a href="tienda.html?cat=banca">Banca</a>
+      </div>
+      <a href="tienda.html?cat=complementos">Complementos</a>
+      <div class="submenu">
+        <a href="tienda.html?cat=cojines">Cojines</a>
+        <a href="tienda.html?cat=maceteros">Maceteros</a>
+        <a href="tienda.html?cat=lamparas">Lámparas</a>
+      </div>
+      <a href="contacto.html">Contacto</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="menu-foot">
+      <p class="menu-follow">Síguenos en</p>
+      <a href="https://www.instagram.com/forjalab.cl/" target="_blank" rel="noopener">Instagram</a>
+      <p class="menu-contact-title">Contáctanos</p>
+      <a href="mailto:hi@forja.cl">hi@forja.cl</a>
+      <a href="https://api.whatsapp.com/send/?phone=56986753883" target="_blank" rel="noopener">+56 9 8675 3883</a>
+      <p class="menu-address">Gerónimo de Alderete 1450, local 5, Vitacura.</p>
+    </div>
+  </div>
+  <div class="overlay-backdrop" id="backdrop"></div>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Carrito</h2>
+      <button class="menu-close" id="cartClose" aria-label="Cerrar">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><span id="cartTotal">$0</span></div>
+      <a href="checkout.html" class="btn-checkout">Ir a pagar</a>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">FORJA<br><small style="font-size:.55rem;letter-spacing:.22em;font-weight:300;color:#9a978f">DISEÑO · MADERA · ACERO</small></span>
+        <p>Diseño de lujo contemporáneo desde Chile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Síguenos en</h4>
+        <a href="https://www.instagram.com/forjalab.cl/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contáctanos</h4>
+        <a href="mailto:hi@forja.cl">hi@forja.cl</a>
+        <a href="https://api.whatsapp.com/send/?phone=56986753883" target="_blank" rel="noopener">+56 9 8675 3883</a>
+        <p class="footer-address">Gerónimo de Alderete 1450, local 5, Vitacura.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tienda</h4>
+        <a href="tienda.html">Muebles</a>
+        <a href="tienda.html?cat=novedades">Novedades</a>
+        <a href="tienda.html?cat=sitiales">Sitiales</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Forja · Desarrollado por aintelligence.cl</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

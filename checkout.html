@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout · FORJA</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{background:#fff;color:#333}
+  .co-header{text-align:center;padding:1.8rem;border-bottom:1px solid var(--line)}
+  .co-header a{font-size:1.2rem;letter-spacing:.4em;font-weight:500;padding-left:.4em}
+  .checkout{max-width:1000px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem}
+  h1{font-weight:400;font-size:1.4rem;margin-bottom:1.6rem;letter-spacing:.05em}
+  .field{margin-bottom:1.1rem}
+  .field label{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:.4rem}
+  .field input{width:100%;padding:.8rem .9rem;border:1px solid var(--line);font-family:inherit;font-size:.95rem}
+  .field input:focus{outline:none;border-color:#333}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .summary{background:#f6f4f0;padding:2rem;height:fit-content}
+  .sum-row{display:flex;gap:1rem;padding:.9rem 0;border-bottom:1px solid #e2ded7}
+  .sum-row img{width:54px;height:68px;object-fit:cover}
+  .sum-row .info{flex:1;font-size:.88rem}
+  .sum-row .info span{color:#888}
+  .sum-total{display:flex;justify-content:space-between;padding-top:1.2rem;font-size:1.05rem}
+  .pay-btn{width:100%;background:#333;color:#fff;padding:1.1rem;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;margin-top:1.5rem;transition:.25s}
+  .pay-btn:hover{background:#000}
+  .note{font-size:.72rem;color:#999;margin-top:1rem;text-align:center}
+  .done{text-align:center;padding:5rem 2rem}
+  .done h1{font-size:1.8rem}
+  @media(max-width:760px){.checkout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="co-header"><a href="index.html">FORJA</a></div>
+
+  <section class="checkout" id="checkoutView">
+    <div>
+      <h1>Datos de envío</h1>
+      <form id="payForm">
+        <div class="row2">
+          <div class="field"><label>Nombre</label><input required name="nombre"></div>
+          <div class="field"><label>Apellido</label><input required name="apellido"></div>
+        </div>
+        <div class="field"><label>Email</label><input required type="email" name="email"></div>
+        <div class="field"><label>Teléfono</label><input required name="tel"></div>
+        <div class="field"><label>Dirección</label><input required name="dir"></div>
+        <div class="row2">
+          <div class="field"><label>Ciudad</label><input required name="ciudad"></div>
+          <div class="field"><label>Región</label><input required name="region"></div>
+        </div>
+        <button class="pay-btn" type="submit">Pagar pedido</button>
+        <p class="note">Pago de demostración · no se procesan cobros reales.</p>
+      </form>
+    </div>
+    <aside class="summary">
+      <h1>Resumen</h1>
+      <div id="sumItems"></div>
+      <div class="sum-total"><span>Total</span><strong id="sumTotal">$0</strong></div>
+    </aside>
+  </section>
+
+  <section class="done" id="doneView" style="display:none">
+    <h1>¡Gracias por tu compra!</h1>
+    <p style="margin-top:1rem;color:#777">Recibirás un correo de confirmación en breve.</p>
+    <p style="margin-top:.4rem;color:#999" id="orderRef"></p>
+    <p style="margin-top:2rem"><a href="index.html" style="border-bottom:1px solid #333;padding-bottom:2px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase">Volver al inicio</a></p>
+  </section>
+
+  <script>
+    const fmt=n=>'$'+n.toLocaleString('es-CL');
+    const cart=JSON.parse(localStorage.getItem('luk_cart')||'[]');
+    const total=cart.reduce((s,p)=>s+p.qty*p.price,0);
+    const si=document.getElementById('sumItems');
+    if(!cart.length){si.innerHTML='<p style="color:#999;font-size:.9rem">Tu carrito está vacío.</p>';}
+    else{si.innerHTML=cart.map(p=>`<div class="sum-row"><img src="${p.img}"><div class="info">${p.name}<br><span>${p.qty} × ${fmt(p.price)}</span></div><div>${fmt(p.qty*p.price)}</div></div>`).join('');}
+    document.getElementById('sumTotal').textContent=fmt(total);
+    document.getElementById('payForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      if(!cart.length){alert('Tu carrito está vacío.');return;}
+      localStorage.removeItem('luk_cart');
+      document.getElementById('checkoutView').style.display='none';
+      const dv=document.getElementById('doneView');dv.style.display='block';
+      document.getElementById('orderRef').textContent='Pedido N° LK-'+Math.floor(100000+Math.random()*900000);
+    });
+  </script>
+</body>
+</html>
