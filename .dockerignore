@@ -1,0 +1,7 @@
+.git
+.gitignore
+.claude
+.gemini
+Dockerfile
+.dockerignore
+default.conf.template
