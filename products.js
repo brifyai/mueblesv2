@@ -16,8 +16,8 @@ window.CATEGORIES = [
 
 window.PRODUCTS = [
   // MUEBLES — Mesa de Centro
-  { id:'ellis',  name:'Mesa de centro vidrio y madera',                  cat:'centro',  price:639000, img:'mesa-centro-vidrio.png' },
-  { id:'roca',   name:'Mesa de centro madera y fierro',                 cat:'centro',  price:712000, img:'mesa-centro-fierro.png' },
+  { id:'ellis',  name:'Mesa de centro vidrio y madera',                  cat:'centro',  price:639000, img:'mesa-centro-vidrio.webp' },
+  { id:'roca',   name:'Mesa de centro madera y fierro',                 cat:'centro',  price:712000, img:'mesa-centro-fierro.webp' },
   { id:'lennon', name:'Mesa de centro de palo de rosa y vidrio Lennon', cat:'centro',  price:868000, img:'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80' },
   { id:'reese',  name:'Mesa de centro en palo de rosa y mármol Reese',  cat:'centro',  price:925000, img:'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80' },
 
@@ -28,39 +28,39 @@ window.PRODUCTS = [
   { id:'harper', name:'Mesa auxiliar de fresno y mármol Harper',            cat:'auxiliar', price:249000, img:'https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80' },
 
   // MUEBLES — Mesa Comedor
-  { id:'parker', name:'Mesa comedor de madera de olmo Parker',  cat:'comedor', price:849000, img:'comedor-organico.png' },
-  { id:'luxe',   name:'Mesa comedor de olmo y acero Luxe',      cat:'comedor', price:935000, img:'comedor-light.png' },
-  { id:'lino',   name:'Mesa comedor de madera clara Lino',      cat:'comedor', price:789000, img:'comedor-arquitecto.png' },
+  { id:'parker', name:'Mesa comedor de madera de olmo Parker',  cat:'comedor', price:849000, img:'comedor-organico.webp' },
+  { id:'luxe',   name:'Mesa comedor de olmo y acero Luxe',      cat:'comedor', price:935000, img:'comedor-light.webp' },
+  { id:'lino',   name:'Mesa comedor de madera clara Lino',      cat:'comedor', price:789000, img:'comedor-arquitecto.webp' },
 
   // SILLAS — Sitial
-  { id:'sinclair', name:'Sitial café',                                        cat:'sitial', price:559000, img:'sitial-cafe.png' },
-  { id:'salem',    name:'Sitial blanco',                                     cat:'sitial', price:489000, img:'sitial-blanco.png' },
-  { id:'velo',     name:'Sitial negro',                                      cat:'sitial', price:629000, img:'sitial-negro.png' },
+  { id:'sinclair', name:'Sitial café',                                        cat:'sitial', price:559000, img:'sitial-cafe.webp' },
+  { id:'salem',    name:'Sitial blanco',                                     cat:'sitial', price:489000, img:'sitial-blanco.webp' },
+  { id:'velo',     name:'Sitial negro',                                      cat:'sitial', price:629000, img:'sitial-negro.webp' },
   { id:'oslo',     name:'Sitial de cuero Oslo',                              cat:'sitial', price:739000, img:'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80' },
 
   // SILLAS — Silla Comedor
-  { id:'norden',  name:'Silla natural',                                  cat:'silla-comedor', price:289000, img:'silla-natural.png' },
-  { id:'vita',    name:'Silla natural sin tapiz',                       cat:'silla-comedor', price:345000, img:'silla-sin-tapiz.png' },
-  { id:'arco',    name:'Silla pink',                                    cat:'silla-comedor', price:265000, img:'silla-pink.png' },
+  { id:'norden',  name:'Silla natural',                                  cat:'silla-comedor', price:289000, img:'silla-natural.webp' },
+  { id:'vita',    name:'Silla natural sin tapiz',                       cat:'silla-comedor', price:345000, img:'silla-sin-tapiz.webp' },
+  { id:'arco',    name:'Silla pink',                                    cat:'silla-comedor', price:265000, img:'silla-pink.webp' },
   { id:'noma',    name:'Silla comedor de madera curvada Noma',          cat:'silla-comedor', price:312000, img:'https://images.unsplash.com/photo-1549497538-303791108f95?auto=format&fit=crop&w=900&q=80' },
 
   // SILLAS — Banqueta
-  { id:'alto',    name:'Banqueta sin respaldo blanco',                   cat:'banqueta', price:229000, img:'banqueta-blanco.png' },
-  { id:'brise',   name:'Banqueta sin respaldo verde musgo',              cat:'banqueta', price:275000, img:'banqueta-verde.png' },
-  { id:'pico',    name:'Banqueta sin respaldo',                          cat:'banqueta', price:195000, img:'banqueta-natural.png' },
-  { id:'gris',    name:'Banqueta sin respaldo gris',                     cat:'banqueta', price:215000, img:'banqueta-gris.png' },
+  { id:'alto',    name:'Banqueta sin respaldo blanco',                   cat:'banqueta', price:229000, img:'banqueta-blanco.webp' },
+  { id:'brise',   name:'Banqueta sin respaldo verde musgo',              cat:'banqueta', price:275000, img:'banqueta-verde.webp' },
+  { id:'pico',    name:'Banqueta sin respaldo',                          cat:'banqueta', price:195000, img:'banqueta-natural.webp' },
+  { id:'gris',    name:'Banqueta sin respaldo gris',                     cat:'banqueta', price:215000, img:'banqueta-gris.webp' },
 
   // SILLAS — Banca
-  { id:'larga',   name:'Banca respaldo orgánica',                        cat:'banca', price:489000, img:'banca-organica.png' },
+  { id:'larga',   name:'Banca respaldo orgánica',                        cat:'banca', price:489000, img:'banca-organica.webp' },
   { id:'parque',  name:'Banca exterior de teca y acero Parque',         cat:'banca', price:559000, img:'https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=900&q=80' },
   { id:'linea',   name:'Banca minimalista de fresno Línea',             cat:'banca', price:425000, img:'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=900&q=80' },
 
   // TERRAZAS
-  { id:'dual-pink',   name:'Set terraza Dual pink',              cat:'terraza', price:459000, img:'terraza-dual-pink.png' },
-  { id:'dual-beige-r', name:'Silla terraza Dual beige',          cat:'terraza', price:189000, img:'terraza-dual-beige-respaldo.png' },
-  { id:'dual-rojo',   name:'Silla terraza Dual rojo',            cat:'terraza', price:189000, img:'terraza-dual-rojo.png' },
-  { id:'dual-beige',  name:'Set terraza Dual beige',             cat:'terraza', price:459000, img:'terraza-dual-beige.png' },
-  { id:'mesa-verano', name:'Mesa terraza Verano',                cat:'terraza', price:349000, img:'terraza-mesa-verano.png' },
+  { id:'dual-pink',   name:'Set terraza Dual pink',              cat:'terraza', price:459000, img:'terraza-dual-pink.webp' },
+  { id:'dual-beige-r', name:'Silla terraza Dual beige',          cat:'terraza', price:189000, img:'terraza-dual-beige-respaldo.webp' },
+  { id:'dual-rojo',   name:'Silla terraza Dual rojo',            cat:'terraza', price:189000, img:'terraza-dual-rojo.webp' },
+  { id:'dual-beige',  name:'Set terraza Dual beige',             cat:'terraza', price:459000, img:'terraza-dual-beige.webp' },
+  { id:'mesa-verano', name:'Mesa terraza Verano',                cat:'terraza', price:349000, img:'terraza-mesa-verano.webp' },
 
   // COMPLEMENTOS — Cojines
   { id:'scala', name:'Cojín de lino verde Scala',           cat:'cojines',   price:48000,  img:'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=900&q=80' },
