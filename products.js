@@ -8,6 +8,7 @@ window.CATEGORIES = [
   ['sitial',        'Sitial'],
   ['banqueta',      'Banqueta'],
   ['banca',         'Banca'],
+  ['terraza',       'Terraza'],
   ['cojines',       'Cojines'],
   ['maceteros',     'Maceteros'],
   ['lamparas',      'Lámparas']
@@ -27,9 +28,9 @@ window.PRODUCTS = [
   { id:'harper', name:'Mesa auxiliar de fresno y mármol Harper',            cat:'auxiliar', price:249000, img:'https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80' },
 
   // MUEBLES — Mesa Comedor
-  { id:'parker', name:'Mesa comedor de madera de olmo Parker',  cat:'comedor', price:849000, img:'https://images.unsplash.com/photo-1550226891-ef816aed4a98?auto=format&fit=crop&w=900&q=80' },
-  { id:'luxe',   name:'Mesa comedor de olmo y acero Luxe',      cat:'comedor', price:935000, img:'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=900&q=80' },
-  { id:'lino',   name:'Mesa comedor de madera clara Lino',      cat:'comedor', price:789000, img:'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80' },
+  { id:'parker', name:'Mesa comedor de madera de olmo Parker',  cat:'comedor', price:849000, img:'comedor-organico.png' },
+  { id:'luxe',   name:'Mesa comedor de olmo y acero Luxe',      cat:'comedor', price:935000, img:'comedor-light.png' },
+  { id:'lino',   name:'Mesa comedor de madera clara Lino',      cat:'comedor', price:789000, img:'comedor-arquitecto.png' },
 
   // SILLAS — Sitial
   { id:'sinclair', name:'Sitial café',                                        cat:'sitial', price:559000, img:'sitial-cafe.png' },
@@ -53,6 +54,13 @@ window.PRODUCTS = [
   { id:'larga',   name:'Banca respaldo orgánica',                        cat:'banca', price:489000, img:'banca-organica.png' },
   { id:'parque',  name:'Banca exterior de teca y acero Parque',         cat:'banca', price:559000, img:'https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=900&q=80' },
   { id:'linea',   name:'Banca minimalista de fresno Línea',             cat:'banca', price:425000, img:'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=900&q=80' },
+
+  // TERRAZAS
+  { id:'dual-pink',   name:'Set terraza Dual pink',              cat:'terraza', price:459000, img:'terraza-dual-pink.png' },
+  { id:'dual-beige-r', name:'Silla terraza Dual beige',          cat:'terraza', price:189000, img:'terraza-dual-beige-respaldo.png' },
+  { id:'dual-rojo',   name:'Silla terraza Dual rojo',            cat:'terraza', price:189000, img:'terraza-dual-rojo.png' },
+  { id:'dual-beige',  name:'Set terraza Dual beige',             cat:'terraza', price:459000, img:'terraza-dual-beige.png' },
+  { id:'mesa-verano', name:'Mesa terraza Verano',                cat:'terraza', price:349000, img:'terraza-mesa-verano.png' },
 
   // COMPLEMENTOS — Cojines
   { id:'scala', name:'Cojín de lino verde Scala',           cat:'cojines',   price:48000,  img:'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=900&q=80' },
